@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>v0.1</title>
-  <style>
-    body {
-      background: repeating-linear-gradient(
-  45deg,
-  #f00,
-  #f00 100px,
-  #fff 100px,
-  #fff 200px
-);
-    }
-  </style>
-</head>
-<body>
-  <h1>v0.2</h1>
-  This is a bad version :-(
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v0.1</title>
+    <style>
+      main {
+        background: rgba(255,255,255,1);
+        margin: 4em;
+        padding: 4em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>v0.2</h1>
+      <label for="coin">Mining dogecoins...</label>
+      <br/>
+      <progress id="coin" max="100" value="10"> 10% </progress> 
+    </main>
+  </body>
+  <script>
+    const coin = document.getElementById('coin');
+    let val = coin.value;
+    setInterval(() => {
+      val++;
+      coin.value = val % 100;
+    }, 100)
+  </script>
 </html>
